@@ -2,6 +2,9 @@
 
 Projeto desenvolvido durante a imersão Front-End da Alura, com melhorias próprias além do conteúdo ensinado.
 
+## 🔗 Acesse o projeto
+https://braavop.github.io/user-profile-selection/
+
 🚀 Sobre o projeto
 
 Este projeto simula a tela de seleção de perfis da Netflix, permitindo que o usuário escolha um perfil e seja direcionado para o catálogo.
@@ -38,7 +41,6 @@ JavaScript (DOM + LocalStorage)
 
 ```bash
 ├── Assets/
-│   ├── DAS-PGMEI-58871769000165-AC2026.pdf
 │   ├── Perfil-1.png
 │   ├── perfil-2.png
 │   ├── perfil-3.png
@@ -83,7 +85,3 @@ Apesar de não seguir carreira em Front-End, utilizei este projeto para desenvol
 - Resolução de problemas reais
 
 As melhorias implementadas demonstram autonomia e capacidade de ir além do conteúdo proposto.
-
-
-## 🔗 Acesse o projeto
-https://braavop.github.io/user-profile-selection/
