@@ -34,6 +34,7 @@ JavaScript (DOM + LocalStorage)
 
 📁 Estrutura do projeto
 
+```bash
 ├── Assets/
 │   ├── DAS-PGMEI-58871769000165-AC2026.pdf
 │   ├── Perfil-1.png
@@ -53,7 +54,7 @@ JavaScript (DOM + LocalStorage)
 ├── Index.html
 ├── style.css
 └── theme.js
- 
+```
 
 ⚠️ Observação:
 A pasta catalogo foi disponibilizada pela Alura durante a imersão.
