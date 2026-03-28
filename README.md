@@ -31,17 +31,29 @@ Interface responsiva para diferentes dispositivos
 HTML5
 CSS3 (Flexbox + Grid + Media Queries)
 JavaScript (DOM + LocalStorage)
+
 📁 Estrutura do projeto
-catalogo/
- ┣ js/
- ┃ ┣ components/
- ┃ ┃ ┣ Card.js
- ┃ ┃ ┗ Carousel.js
- ┃ ┣ data.js
- ┃ ┣ main.js
- ┃ ┗ utils.js
- ┣ catalogo.css
- ┗ catalogo.html
+
+├── Assets/
+│   ├── DAS-PGMEI-58871769000165-AC2026.pdf
+│   ├── Perfil-1.png
+│   ├── perfil-2.png
+│   ├── perfil-3.png
+│   └── perfil-4.png
+├── catalogo/
+│   ├── js/
+│   │   ├── components/
+│   │   │   ├── Card.js
+│   │   │   └── Carousel.js
+│   │   ├── data.js
+│   │   ├── main.js
+│   │   └── utils.js
+│   ├── catalogo.css
+│   └── catalogo.html
+├── Index.html
+├── style.css
+└── theme.js
+ 
 
 ⚠️ Observação:
 A pasta catalogo foi disponibilizada pela Alura durante a imersão.
