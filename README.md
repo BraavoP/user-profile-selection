@@ -8,6 +8,7 @@ Este projeto simula a tela de seleção de perfis da Netflix, permitindo que o u
 
 Além do desenvolvimento base proposto na imersão, implementei melhorias focadas em responsividade, usabilidade e experiência do usuário.
 
+```bash
 ✨ Melhorias implementadas (além da imersão)
 📱 Responsividade corrigida
 Corrigi um problema onde os perfis quebravam de forma desorganizada em telas menores
@@ -31,6 +32,7 @@ Interface responsiva para diferentes dispositivos
 HTML5
 CSS3 (Flexbox + Grid + Media Queries)
 JavaScript (DOM + LocalStorage)
+```
 
 📁 Estrutura do projeto
 
