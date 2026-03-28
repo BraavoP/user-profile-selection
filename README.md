@@ -83,3 +83,7 @@ Apesar de não seguir carreira em Front-End, utilizei este projeto para desenvol
 - Resolução de problemas reais
 
 As melhorias implementadas demonstram autonomia e capacidade de ir além do conteúdo proposto.
+
+
+## 🔗 Acesse o projeto
+https://braavop.github.io/user-profile-selection/
