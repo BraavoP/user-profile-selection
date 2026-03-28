@@ -1,0 +1,375 @@
+/* Estilos inspirados na Netflix para a tela de seleção de perfis */
+
+:root {
+    --bg-color: #f5f5f5;
+    --text-color: #222020;
+    --border-hover-color: #222020;
+    --header-color: #222020;
+}
+
+body.dark {
+    --bg-color: #222020;
+    --text-color: #fff;
+    --border-hover-color: #fff;
+    --header-color: #fff;
+}
+
+body.light {
+    --bg-color: #e6dede;
+    --text-color: #222020;
+    --border-hover-color: #222020;
+    --header-color: #222020;
+}
+
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.theme-toggle {
+    margin: 1rem auto 0 auto; /* Centraliza o botão horizontalmente */
+    width: 56px;
+    height: 30px;
+    border-radius: 30px;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.1);
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+    display: block; /* Garante que o margin auto funcione */
+}
+
+.theme-toggle .toggle-ball {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: var(--text-color);
+    position: absolute;
+    top: 50%;
+    left: 4px; /* Posição inicial (modo claro) */
+    transform: translateY(-50%); /* Apenas centralização vertical */
+    transition: transform 0.2s ease, left 0.2s ease, background-color 0.2s ease;
+}
+
+/* Estado quando o tema escuro está ativo */
+.theme-toggle.dark {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.theme-toggle.dark .toggle-ball {
+    /* Move a bolinha para a direita descontando a largura dela e o respiro */
+    left: calc(100% - 26px); 
+}
+
+.theme-toggle:hover {
+    border-color: rgba(255, 255, 255, 1);
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 400;
+    margin: 25px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.profiles {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+img:hover {
+    transform: scale(1.1);
+}
+
+figure {
+    margin: 0;
+    text-align: center;
+}
+
+img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid transparent;
+    transition: border-color 0.3s ease, transform 0.2s ease;
+}
+
+.profile:hover img {
+    border-color: var(--border-hover-color);
+}
+
+figcaption {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+/* ===== RESPONSIVIDADE PARA MOBILIDADE ===== */
+
+/* ===== AJUSTE UNIFICADO PARA DISPOSITIVOS MÓVEIS (0px até 600px) ===== */
+
+@media (max-width: 600px) {
+    body {
+        /* Garantimos que o body use Flexbox para centralizar tudo */
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important; /* CENTRO VERTICAL */
+        align-items: center !important;     /* CENTRO HORIZONTAL */
+        height: 100vh !important;           /* Força a altura exata da tela */
+        width: 100vw !important;            /* Força a largura exata da tela */
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: hidden !important;        /* Remove qualquer rolagem fantasma */
+    }
+
+    header {
+        margin: 0 0 2rem 0 !important; /* Margem apenas embaixo */
+        text-align: center !important;
+        width: 100% !important;
+    }
+
+    h1 {
+        font-size: 1.8rem !important; /* Título menor para não quebrar */
+        margin: 1 !important;
+    }
+
+    main {
+        /* O main deve ser um container flexivel centralizado */
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* O CONTAINER DAS COLUNAS: VOLTAMOS PRO GRID, É O MAIS ESTÁVEL */
+    .profiles {
+        display: grid !important;
+        /* Criamos 2 colunas de tamanho fixo: 110px. O total dá 220px + gap. */
+        grid-template-columns: repeat(2, 110px) !important; 
+        gap: 2rem 1.5rem !important;
+        
+        /* Centraliza o conteúdo dentro do grid */
+        justify-content: center !important; 
+        
+        /* Centraliza o grid verticalmente (se o main for mais alto) */
+        align-content: center !important;
+        
+        /* Garante que o bloco não seja 100% da largura, evitando que ele fugue */
+        width: auto !important; 
+        margin: 0 auto !important; 
+        padding: 0 !important;
+    }
+
+    .profile {
+        margin: 0 !important;
+        padding: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    img {
+        width: 100px !important;
+        height: 100px !important;
+    }
+
+    figcaption {
+        margin-top: 0.8rem !important;
+        font-size: 0.9rem !important;
+        text-align: center !important;
+        width: 100% !important;
+    }
+}
+
+/* Tablet em Retrato (601px a 768px) */
+@media (min-width: 601px) and (max-width: 768px) {
+    body {
+        padding: 1.5rem;
+    }
+
+    header {
+        margin-bottom: 2.5rem;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+        margin: 20px 0;
+    }
+
+    .profiles {
+        gap: 1.5rem;
+        max-width: 600px;
+    }
+
+    img {
+        width: 130px;
+        height: 130px;
+    }
+
+    figcaption {
+        margin-top: 1rem;
+        font-size: 1.05rem;
+    }
+}
+
+/* Tablet em Paisagem e Desktop Pequeno (769px a 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    body {
+        padding: 1.5rem;
+    }
+
+    header {
+        margin-bottom: 2.5rem;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        margin: 25px 0;
+    }
+
+    .profiles {
+        gap: 1.8rem;
+        max-width: 800px;
+    }
+
+    img {
+        width: 140px;
+        height: 140px;
+    }
+
+    figcaption {
+        margin-top: 1rem;
+        font-size: 1.1rem;
+    }
+}
+
+/* Desktop Padrão (1025px a 1440px) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+    body {
+        padding: 2rem;
+    }
+
+    header {
+        margin-bottom: 3rem;
+    }
+
+    h1 {
+        font-size: 3rem;
+        margin: 25px 0;
+    }
+
+    .profiles {
+        gap: 2rem;
+        max-width: 900px;
+    }
+
+    img {
+        width: 150px;
+        height: 150px;
+    }
+
+    figcaption {
+        margin-top: 1rem;
+        font-size: 1.2rem;
+    }
+}
+
+/* Desktop Grande (acima de 1440px) */
+@media (min-width: 1441px) {
+    body {
+        padding: 2rem;
+    }
+
+    header {
+        margin-bottom: 3.5rem;
+    }
+
+    h1 {
+        font-size: 3.5rem;
+        margin: 30px 0;
+    }
+
+    .profiles {
+        gap: 2.5rem;
+        max-width: 1000px;
+    }
+
+    img {
+        width: 170px;
+        height: 170px;
+    }
+
+    figcaption {
+        margin-top: 1.2rem;
+        font-size: 1.3rem;
+    }
+
+    img:hover {
+        transform: scale(1.12);
+    }
+}
+
+/* ===== MELHORIAS DE ACESSIBILIDADE E PERFORMANCE ===== */
+
+/* Respeita preferências de movimento reduzido */
+@media (prefers-reduced-motion: reduce) {
+    .profile,
+    img,
+    .profile:hover img {
+        transition: none;
+    }
+
+    img:hover {
+        transform: none;
+    }
+}
+
+/* Modo escuro preferido (só vale se o usuário não definir tema manualmente) */
+@media (prefers-color-scheme: dark) {
+    body:not(.light):not(.dark) {
+        --bg-color: #222020;
+        --text-color: #fff;
+        --border-hover-color: #fff;
+    }
+}
+
+/* Modo claro (só vale se o usuário não definir tema manualmente) */
+@media (prefers-color-scheme: light) {
+    body:not(.light):not(.dark) {
+        --bg-color: #f5f5f5;
+        --text-color: #222020;
+        --border-hover-color: #222020;
+    }
+}
